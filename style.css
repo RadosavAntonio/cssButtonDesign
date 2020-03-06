@@ -153,3 +153,73 @@ a span:nth-child(4){
     background-position: 400%;
   }
 }
+
+.neon{
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* padding: 15px 30px; */
+  margin: 0;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 0 0 20px #f441a5;
+}
+.neon:after{
+  content: attr(text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -1;
+  color: #f441a5;
+  filter: blur(15px);
+}
+.neon:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f441a5;
+  z-index: -2;
+  opacity: .5;
+  filter: blur(40px);
+}
+
+.shadow{
+  position: absolute;
+  top: 450px;
+  left: 20%;
+  margin: 200px auto 0;
+  width: 400px;
+  height: 250px;
+  background: linear-gradient(0deg, #000, #262626);
+  border-radius: 30px;
+}
+.shadow:before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, #fb0094, #00ff00, #ffff00, #ff0000, #fb0094, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  border-radius: 30px;
+}
+@keyframes animate{
+  0%{
+    background-position: 0 0;
+  }
+  50%{
+    background-position: 400% 0;
+  }
+  100%{
+    background-position: 0 0;
+  }
+}
